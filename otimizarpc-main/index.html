@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OTIMIZE seu PC/NOTEBOOK</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Pack de Otimização para PC & Notebook</h1>
+      <p>Conheça todas as maneiras para melhorar o desempenho da sua maquina!</p>
+    </div>
+  </header>
+
+  <section class="produto">
+    <div class="container">
+      <img class="logo" src="imagens/@_eliasffx.jpg" alt="Logo pack">
+      <div class="info">
+        <h2>O que você vai aprender?</h2>
+        <ul>
+          <li>Criar Ponto de Restauração</li>
+          <li>Configurar Placa de Video</li>
+          <li>Melhorar o Desempenho para Jogos/Fps</li>
+          <li>Configurar processador</li>
+          <li>Inputlag</li>
+          <li>Bats</li>
+          <li>Mais de 300 maneiras de otimizações</li>
+          <p>e diversas outras coisas.</p>
+        </ul>
+        <h3 class="preco">Por apenas <strong>R$ 11,99</strong></h3>
+        <div><a href="https://pay.cakto.com.br/37mjihe_1128550" class="botao-comprar" target="_blank">Comprar Agora</a></div>
+      </div>
+    </div>
+  </section>
+<section class="feedbacks">
+  <h1>Feedbacks</h1>
+  <div class="carrossel-container">
+    <button class="seta esquerda">&#10094;</button>
+    <div class="carrossel">
+      <div class="carrossel-item"><img src="imagens/IMG_1.jpg" alt="Feedback 1"></div>
+      <div class="carrossel-item"><img src="imagens/IMG_2.jpg" alt="Feedback 2"></div>
+      <div class="carrossel-item"><img src="imagens/IMG_3.jpg" alt="Feedback 3"></div>
+      <div class="carrossel-item"><img src="imagens/IMG_4.jpg" alt="Feedback 4"></div>
+      <div class="carrossel-item"><img src="imagens/IMG_5.jpg" alt="Feedback 5"></div>
+      <div class="carrossel-item"><img src="imagens/IMG_6.jpg" alt="Feedback 6"></div>
+      <div class="carrossel-item"><img src="imagens/IMG_7.jpg" alt="Feedback 7"></div>
+      <div class="carrossel-item"><img src="imagens/IMG_8.jpg" alt="Feedback 8"></div>
+    </div>
+    <button class="seta direita">&#10095;</button>
+  </div>
+</section>
+
+<section class="contato">
+  <h2>Ficou alguma dúvida?</h2>
+  <p>Confira as dúvidas frequente ou entre em contato comigo abaixo</p>
+  
+<a href="https://wa.me/5511976589343" target="_blank" class="botao-whatsapp">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon">
+  Fale Comigo no WhatsApp
+</a>
+<a href="https://instagram.com/_eliasffx" target="_blank" class="botao-instagram">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/1024px-Instagram_logo_2016.svg.png?20210403190622" alt="WhatsApp" class="instagram-icon">
+  Fale Comigo no Instagram
+</a>
+
+</section>
+
+<section class="duvidas">
+  <h2>Dúvidas Frequentes</h2>
+
+  <div class="faq-item">
+    <button class="faq-question">
+      <span class="icone">+</span>
+      O que é o Pack de Otimização?
+    </button>
+    <div class="faq-answer">
+      <p>O Pack de Otimização é um conjunto de ferramentas e tutoriais que visam melhorar o desempenho, fluidez e FPS do seu PC e notebook.</p>
+    </div>
+  </div>
+  
+  <div class="faq-item">
+    <button class="faq-question">
+      <span class="icone">+</span>
+      Como posso comprar?
+    </button>
+    <div class="faq-answer">
+      <p>Você pode clicar no botão "Comprar Agora" no site, escolher a forma de pagamento e concluir a compra.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">
+      <span class="icone">+</span>
+      Não gostou e quer cancelar?
+    </button>
+    <div class="faq-answer">
+      <p>Sem problemas! Você tem até 7 dias para cancelar e receber seu dinheiro de volta!</p>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Pack OTIMIZE seu PC | Todos os direitos reservados.</p>
+    </div>
+  </footer>
+</body>
+</html>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  // --- Carrossel ---
+  const carrossel = document.querySelector(".carrossel");
+  const items = document.querySelectorAll(".carrossel-item");
+  const totalItems = items.length;
+  let currentIndex = 0;
+
+  const getItemsPerView = () => {
+    if (window.innerWidth >= 1200) return 4;
+    return 2;
+  };
+
+  const moveTo = (index) => {
+    const itemsPerView = getItemsPerView();
+    const maxIndex = totalItems - itemsPerView;
+
+    if (index < 0) {
+      currentIndex = maxIndex;
+    } else if (index > maxIndex) {
+      currentIndex = 0;
+    } else {
+      currentIndex = index;
+    }
+
+    const percentage = -(100 / getItemsPerView()) * currentIndex;
+    carrossel.style.transform = `translateX(${percentage}%)`;
+  };
+
+  document.querySelector(".seta.direita").addEventListener("click", () => {
+    moveTo(currentIndex + getItemsPerView());
+  });
+
+  document.querySelector(".seta.esquerda").addEventListener("click", () => {
+    moveTo(currentIndex - getItemsPerView());
+  });
+
+  window.addEventListener("resize", () => {
+    moveTo(currentIndex);
+  });
+
+  // --- FAQ com ícones + e - ---
+  const faqQuestions = document.querySelectorAll(".faq-question");
+
+  faqQuestions.forEach((question) => {
+    question.addEventListener("click", function () {
+      const answer = this.nextElementSibling;
+      const icon = this.querySelector(".icone");
+      const isOpen = answer.style.display === "block";
+
+      // Fecha todos os outros
+      document.querySelectorAll(".faq-answer").forEach((el) => el.style.display = "none");
+      document.querySelectorAll(".faq-question .icone").forEach((ic) => ic.textContent = "+");
+
+      if (!isOpen) {
+        answer.style.display = "block";
+        if (icon) icon.textContent = "–";
+      }
+    });
+  });
+});
+</script>
