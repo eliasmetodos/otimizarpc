@@ -1,0 +1,415 @@
+/* Reset simples */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+h1{
+    text-align: center;
+}
+h2{
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+h3{
+    text-align: center;
+}
+ul li{
+    margin-bottom: 5px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, Courier, monospace, Helvetica, sans-serif;
+}
+
+/* Container central */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+.container-pai{
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container-video {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  aspect-ratio: 16 / 9; /* substitui o padding-top! */
+  overflow: hidden;
+}
+
+.container-video iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Cabeçalho */
+header {
+  background-color: #008cff;
+  color: white;
+  padding: 40px 0;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2.5rem;
+}
+
+header p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+/* Seção do produto */
+.produto {
+  background-color: white;
+  padding: 50px 0;
+}
+
+.produto .container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 40px;
+}
+
+.produto img {
+  width: 300px;
+  height: auto;
+}
+.logo {
+  border-radius: 50%;
+  margin: auto;
+}
+
+.info {
+  flex: 1;
+}
+
+.info h2 {
+  color: #306998;
+  margin-bottom: 10px;
+}
+
+.info ul {
+  list-style-type: disc;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.preco {
+  font-size: 1.5rem;
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+.botao-comprar {
+  background-color: #002fff;
+  color: #000;
+  padding: 15px 30px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  width: 200px;
+}
+
+.botao-comprar:hover {
+  transform: scale(1.05); /* Aumenta 5% */
+  background-color: #00ffdd; /* ou qualquer cor de destaque */
+  cursor: pointer;
+}
+.botao-comprar:active {
+  transform: scale(0.98); /* Efeito de pressionamento do botão */
+}
+
+/* --- Seção de Feedbacks - Carrossel --- */
+.feedbacks {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carrossel-container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.carrossel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carrossel-item {
+  flex: 0 0 calc(100% / 2); /* Por padrão: 2 por vez */
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.carrossel-item img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+
+/* Botões */
+.seta {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  font-size: 24px;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.seta.esquerda {
+  left: 10px;
+}
+
+.seta.direita {
+  right: 10px;
+}
+
+/* Responsivo: 4 por vez no desktop */
+@media (min-width: 992px) {
+  .carrossel-item {
+    flex: 0 0 calc(100% / 4); /* 4 imagens por vez */
+  }
+
+  .carrossel-item img {
+    height: 180px;
+  }
+}
+/* Container geral para as duas seções */
+.container-duvidas {
+  display: flex; /* Organiza os itens lado a lado */
+  justify-content: space-between; /* Adiciona espaço entre os itens */
+  align-items: flex-start; /* Alinha os itens no topo */
+  margin-top: 50px;
+  padding: 0 20px;
+}
+.container-duvidas img{
+    border-radius: 50%;
+}
+
+/* Estilo para a seção de Dúvidas */
+.duvidas {
+  width: 60%; /* A seção de dúvidas ocupa 60% da tela */
+  padding-right: 20px; /* Espaço entre a seção de dúvidas e o WhatsApp */
+}
+
+.duvidas h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.duvidas p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+/* Estilo para o botão do WhatsApp */
+.whatsapp {
+  width: 30%; /* A seção do WhatsApp ocupa 30% da tela */
+  text-align: center;
+  background-color: #25d366; /* Cor do fundo do botão */
+  padding: 20px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.whatsapp img {
+  width: 50px; /* Ícone do WhatsApp */
+  margin-bottom: 10px;
+}
+
+.whatsapp p {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Responsividade para telas pequenas */
+@media (max-width: 768px) {
+  .container-duvidas {
+    flex-direction: column; /* Alinha os itens verticalmente em telas pequenas */
+  }
+
+  .duvidas {
+    width: 100%; /* Seção de dúvidas ocupa toda a largura */
+    margin-bottom: 20px; /* Espaço abaixo */
+  }
+
+  .whatsapp {
+    width: 100%; /* WhatsApp também ocupa toda a largura */
+    margin-top: 20px;
+  }
+}
+/* Estilos para a seção de Dúvidas Frequentes */
+.duvidas {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.duvidas h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  color: #306998;
+}
+
+.faq-item {
+  margin-bottom: 15px;
+  border-bottom: 1px solid #ccc;
+}
+
+.faq-question {
+  width: 100%;
+  padding: 15px 50px 15px 15px; /* espaço à direita pro ícone */
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center; /* texto centralizado */
+  background-color: #1583dd;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  color: rgb(0, 0, 0);
+}
+
+.faq-question .icone {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+}
+
+.faq-answer {
+  display: none;
+  padding: 0 10px 10px;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+.contato{
+    margin-top: 60px;
+}
+.contato p {
+    text-align: center;
+}
+.botao-whatsapp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #25D366; /* Cor oficial do WhatsApp */
+  color: white;
+  font-size: 1.2rem;
+  padding: 12px 30px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  max-width: 300px; /* Define a largura máxima do botão */
+  margin: 20px auto; /* Centraliza o botão */
+}
+
+.botao-whatsapp:hover {
+  background-color: #128C7E; /* Cor de hover do WhatsApp */
+  cursor: pointer;
+  transform: scale(1.05); /* Aumenta o tamanho levemente ao passar o mouse */
+}
+
+.botao-whatsapp:active {
+  transform: scale(0.98); /* Efeito de pressionamento do botão */
+}
+
+.whatsapp-icon {
+  width: 24px; /* Tamanho do ícone */
+  height: 24px;
+  margin-right: 10px; /* Espaçamento entre o ícone e o texto */
+}
+.instagram-icon {
+  width: 24px; /* Tamanho do ícone */
+  height: 24px;
+  margin-right: 10px; /* Espaçamento entre o ícone e o texto */
+}
+.botao-instagram {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #d33f25; /* Cor oficial do WhatsApp */
+  color: white;
+  font-size: 1.2rem;
+  padding: 12px 30px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  max-width: 300px; /* Define a largura máxima do botão */
+  margin: 20px auto; /* Centraliza o botão */
+}
+.botao-instagram:hover {
+  background-color: #ec0909; /* Cor de hover do WhatsApp */
+  cursor: pointer;
+  transform: scale(1.05); /* Aumenta o tamanho levemente ao passar o mouse */
+}
+
+.botao-instagram:active {
+  transform: scale(0.98); /* Efeito de pressionamento do botão */
+}
+
+
+@media (max-width: 768px) {
+  .botao-whatsapp {
+    font-size: 1rem; /* Tamanho de fonte menor para telas menores */
+    padding: 10px 20px; /* Menos padding para dispositivos móveis */
+  }
+}
+@media (max-width: 768px) {
+  .botao-instagram {
+    font-size: 1rem; /* Tamanho de fonte menor para telas menores */
+    padding: 10px 20px; /* Menos padding para dispositivos móveis */
+  }
+}
+
+
+/* Rodapé */
+footer {
+  background-color: #0026ff;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+}
